@@ -39,7 +39,7 @@ namespace CalculoFreteEstado
             this.label5 = new System.Windows.Forms.Label();
             this.btnCalcular = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
+            this.lblResultado = new System.Windows.Forms.Label();
             this.cbEstado = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
@@ -47,7 +47,7 @@ namespace CalculoFreteEstado
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("LEMON MILK Bold", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(38, 35);
+            this.label1.Location = new System.Drawing.Point(41, 42);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(524, 40);
             this.label1.TabIndex = 0;
@@ -104,6 +104,7 @@ namespace CalculoFreteEstado
             this.txtFrete.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtFrete.Location = new System.Drawing.Point(127, 207);
             this.txtFrete.Name = "txtFrete";
+            this.txtFrete.ReadOnly = true;
             this.txtFrete.Size = new System.Drawing.Size(174, 28);
             this.txtFrete.TabIndex = 6;
             // 
@@ -126,6 +127,7 @@ namespace CalculoFreteEstado
             this.btnCalcular.TabIndex = 8;
             this.btnCalcular.Text = "Calcular";
             this.btnCalcular.UseVisualStyleBackColor = true;
+            this.btnCalcular.Click += new System.EventHandler(this.btnCalcular_Click);
             // 
             // label6
             // 
@@ -137,18 +139,25 @@ namespace CalculoFreteEstado
             this.label6.TabIndex = 9;
             this.label6.Text = "Valor Final:";
             // 
-            // label7
+            // lblResultado
             // 
-            this.label7.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.label7.Location = new System.Drawing.Point(57, 351);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(494, 113);
-            this.label7.TabIndex = 10;
+            this.lblResultado.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.lblResultado.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblResultado.Location = new System.Drawing.Point(57, 351);
+            this.lblResultado.Name = "lblResultado";
+            this.lblResultado.Size = new System.Drawing.Size(494, 113);
+            this.lblResultado.TabIndex = 10;
+            this.lblResultado.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // cbEstado
             // 
             this.cbEstado.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbEstado.FormattingEnabled = true;
+            this.cbEstado.Items.AddRange(new object[] {
+            "AM",
+            "MG",
+            "RJ",
+            "SP"});
             this.cbEstado.Location = new System.Drawing.Point(403, 164);
             this.cbEstado.Name = "cbEstado";
             this.cbEstado.Size = new System.Drawing.Size(148, 28);
@@ -160,7 +169,7 @@ namespace CalculoFreteEstado
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(608, 477);
             this.Controls.Add(this.cbEstado);
-            this.Controls.Add(this.label7);
+            this.Controls.Add(this.lblResultado);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.btnCalcular);
             this.Controls.Add(this.label5);
@@ -193,7 +202,7 @@ namespace CalculoFreteEstado
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button btnCalcular;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label lblResultado;
         private System.Windows.Forms.ComboBox cbEstado;
     }
 }
